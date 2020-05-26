@@ -65,3 +65,52 @@ let array4 = array3
 array3.push("apple");
 console.log(array4);
 
+// オブジェクトとプロパティ
+const myObject = {};
+myObject.myFunction = ()=>{};
+myObject.array = [];
+myObject.string = 'string';
+myObject.number = 22;
+myObject.date = new Date();
+myObject.regExp = /a/;
+myObject.null = null;
+myObject.undefined = undefined;
+myObject.object = {};
+myObject.path = Math.PI;
+console.log(myObject);
+
+// ドット記法
+let myFunction = {};
+myFunction.array = [3,3];
+// ブラケット記法
+myFunction['number'] = [2,4];
+myFunction.method = () => { return myFunction.number };
+console.log(myFunction.number);
+
+let object2 = { 
+  '123':'zero',
+  'class':'foo'
+};
+// 数字で始まるプロパティ名は不正、ブランケット記法のみ可能
+console.log(object2['123'], object2['class']);
+
+// hasOwnProperty()
+let object3 = { 
+  'class':'foo'
+};
+// プロトタイプチェーン経由ではない
+console.log(object3.hasOwnProperty('class'));//true
+// プロトタイプチェーン経由
+console.log(object3.hasOwnProperty('toString'));//false
+
+// オブジェクトがプロパティを保持しているか
+console.log('toString' in object3);
+
+// for-inループ
+for(let key in object3){
+  console.log(key);
+}
+
+for ( x in window.document){
+  console.log(x);
+}
